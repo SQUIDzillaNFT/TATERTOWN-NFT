@@ -9,7 +9,7 @@ contract TATERTOWN is ERC721A, Ownable {
     uint256 MAX_SUPPLY = 5555;
     uint256 public mintRate = 0.0004 ether;
 
-    string public baseURI = "mandox.mypinata.cloud/ipfs/QmUxabT7q1DDp6JtokS6cybo7KVFREB9AFTFSv4nwdR5gu/";
+    string public baseURI = "ipfs://QmUxabT7q1DDp6JtokS6cybo7KVFREB9AFTFSv4nwdR5gu/";
 
     constructor() ERC721A("Taters", "TATER") {}
 

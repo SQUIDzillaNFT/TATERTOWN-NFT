@@ -15,15 +15,22 @@ import "./SafeMath.sol";
 contract TATERTOWN is ERC721A, Ownable {
     using SafeMath for uint256;
 
-    uint256 MAX_MINTS = 10;
+    uint256 MAX_MINTS = 100;
     uint256 MAX_ELEMENTS = 5555;
     uint256 public mintRate = 0.0007 ether;
     uint256 public privateMintPrice = 0.0005 ether;
     uint256 public MAX_MINT_WHITELIST = 20;
-
+    /*
+    * @Dev Booleans for sale states. 
+    * salesIsActive must be true in any case to mint
+    * privateSaleIsActive must be true in the case of Whitelist mints
+    */
     bool public saleIsActive = false;
     bool public privateSaleIsActive = true;
-
+    /*
+    * @Dev Whitelist Struct and Mappings
+    * the address and amount minted to keep track of how many you may mint
+    */
     struct Whitelist {
         address addr;
         uint256 claimAmount;
@@ -35,7 +42,7 @@ contract TATERTOWN is ERC721A, Ownable {
     address[] whitelistAddr;
 
 
-    string public baseURI = "mandox.mypinata.cloud/ipfs/QmUxabT7q1DDp6JtokS6cybo7KVFREB9AFTFSv4nwdR5gu/";
+    string public baseURI = "ipfs://QmUxabT7q1DDp6JtokS6cybo7KVFREB9AFTFSv4nwdR5gu/";
 
     constructor() ERC721A("Taters", "TATER") {}
 
@@ -53,12 +60,9 @@ contract TATERTOWN is ERC721A, Ownable {
         mintRate = _price;
     }
 /*
-    function mint(uint256 quantity) external payable {
+    function Devmint(uint256 quantity) external payable onlyOwner {
         require(saleIsActive, "Sale must be active to mint");
-        // _safeMint's second argument now takes in a quantity, not a tokenId.
-        require(quantity + _numberMinted(msg.sender) <= MAX_MINTS, "Exceeded the limit");
         require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left");
-        require(msg.value >= (mintRate * quantity), "Not enough ether sent");
         _safeMint(msg.sender, quantity);
     }
 */
