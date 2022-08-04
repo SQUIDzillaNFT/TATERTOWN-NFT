@@ -185,7 +185,7 @@ function MainComponent() {
       <div>
       </div>
       <div className="mint-section">
-        <img className="logo-img" src={logo} />
+      <img className="logo-img" src={logo} />
       </div>
       <div className="kid">
         <img className="kid-img" src={kid} />
@@ -193,8 +193,8 @@ function MainComponent() {
       <div className={`main-section ` + (walletConnected ? "connected" : " ")}>
         {
           !isStarted && (
-            <div className="count-down">
-              <Countdown className="mt-5" date={new Date("2022-08-12T16:00:00+0000")} renderer={renderer} />
+            <div className="count-down"> 
+              <Countdown className="mt-5" date={new Date("2022-08-12T15:00:00+0000")} renderer={renderer} />
               
             </div>
           )

@@ -6,11 +6,14 @@ body, html {height: 100%}
   text-align: center;
   color: white;
   height: 100vh;
+  width: auto;
   background-color: #000000;
-  background-image: url("https://i.imgur.com/zcv7h8X.jpg");
+  background-image: url("https://i.imgur.com/Elvhc7X.png");
+  background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
 
 }
 
@@ -88,7 +91,7 @@ body, html {height: 100%}
 .mint-section .btn-connect {
   vertical-align: middle;
   margin: auto;
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: black;
 }
 
@@ -128,7 +131,7 @@ body, html {height: 100%}
 /*}*/
 
 .btn-wrapper .btn-shadow {
-  border: 2px solid #fff;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 999px;
   background: transparent;
   width: 100%;
@@ -145,7 +148,7 @@ body, html {height: 100%}
   line-height: 1.375rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff !important;
+  color: #000000 !important;
   position: relative;
   cursor: pointer;
 }
@@ -293,7 +296,7 @@ input:disabled{
   width: 200px;
   height: 45px;
   margin: 10px 5px;
-  border: 1.5px solid #d4d4dc;
+  border: 1.5px solid #000000;
   font-size: 13px;
   padding: 10px 17px;
   background: #0a0a0a;
