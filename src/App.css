@@ -7,7 +7,7 @@ body, html {height: 100%}
   color: white;
   height: 100vh;
   background-color: #000000;
-  background-image: url("https://i.imgur.com/HtiFTgd.png");
+  background-image: url("https://i.imgur.com/zcv7h8X.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -138,7 +138,7 @@ body, html {height: 100%}
 }
 
 .btn-connect {
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 999px;
   padding: 0.725rem 1.75rem;
   width: 100%;
@@ -189,8 +189,11 @@ body, html {height: 100%}
   line-height: 30px;
   padding: 0 2px;
   min-width: 35px;
-  background: transparent;
+  background: #0000008f;
+  border-radius: 90px;
   text-align: center;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .qty {
@@ -223,10 +226,10 @@ div {
   text-align: center;
 }
 .minus:hover{
-  background-color: #ee00ff !important;
+  background-color: #9915bd !important;
 }
 .plus:hover{
-  background-color: #51ff00 !important;
+  background-color: #13800f !important;
 }
 /*Prevent text selection*/
 span{
@@ -490,7 +493,7 @@ input:disabled{
 }
 
 .btn-black  {
-  border: 1px solid white;
+  border: 1px solid rgb(234, 144, 11);
   /*width: 50%;*/
 }
 
@@ -508,10 +511,13 @@ input:disabled{
 
 .totalMint {
   font-size: xx-large;
-  font-family: 'Bangers', cursive;
+  font-family: 'Chewy', cursive;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  border-radius: 50px;
 }
 
 .totalNumber {
   font-size: xx-large;
-  font-family: 'Bangers', cursive;
+  font-family: 'Chewy', cursive;
+  color: #ef386c;
 }

@@ -1,7 +1,7 @@
 ﻿import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
-import logo from './images/LostKids.png';
-import kid from "./images/kid.png";
+import logo from './images/tatelogo.png';
+import kid from "./images/flower.png";
 import connectWalletImg from "./images/Connect Wallet.png"
 import disconnectWalletImg from "./images/Disconnect.png"
 import mintImg from "./images/Mint.png"
