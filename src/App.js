@@ -194,7 +194,7 @@ function MainComponent() {
         {
           !isStarted && (
             <div className="count-down">
-              <Countdown className="mt-5" date={new Date("2022-06-17T16:00:00+0000")} renderer={renderer} />
+              <Countdown className="mt-5" date={new Date("2022-08-12T16:00:00+0000")} renderer={renderer} />
               
             </div>
           )
