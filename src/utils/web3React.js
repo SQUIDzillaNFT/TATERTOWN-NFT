@@ -10,7 +10,7 @@ const POLLING_INTERVAL = 12000;
 const rpcUrl = RPC_URLS[1];//getNodeUrl();
 const chainId = parseInt(1, 10);
 
-export const injected = new InjectedConnector({ supportedChainIds: [1, 4] });
+export const injected = new InjectedConnector({ supportedChainIds: [1, 4, 5] });
 
 export const walletconnect = new WalletConnectConnector({
   chainId: 1,

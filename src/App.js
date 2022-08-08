@@ -63,7 +63,7 @@ function MainComponent() {
         console.log('wallet', wallet);
         if (wallet.provider) {
           let ethersProvider = new ethers.providers.Web3Provider(wallet.provider);
-          let _nftContract = new ethers.Contract(ERC721a.networks[4].address, ERC721a.abi, ethersProvider.getUncheckedSigner());
+          let _nftContract = new ethers.Contract(ERC721a.networks[5].address, ERC721a.abi, ethersProvider.getUncheckedSigner());
           setContract(_nftContract);
           let _totalSupply = await _nftContract.totalSupply();
           console.log(totalSupply);
@@ -141,7 +141,7 @@ function MainComponent() {
       const privateSale = await contract.privateSaleIsActive();
       let mintPrice = 0;
       if (privateSale) {
-        setMaxMintCount(2);
+        setMaxMintCount(10);
         mintPrice = await contract.privateMintPrice();
       } else {
         mintPrice = await contract.mintRate();
@@ -194,7 +194,7 @@ function MainComponent() {
         {
           !isStarted && (
             <div className="count-down"> 
-              <Countdown className="mt-5" date={new Date("2022-08-12T15:00:00+0000")} renderer={renderer} />
+              <Countdown className="mt-5" date={new Date("2022-07-12T15:00:00+0000")} renderer={renderer} />
               
             </div>
           )

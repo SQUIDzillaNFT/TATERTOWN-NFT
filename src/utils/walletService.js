@@ -1,6 +1,6 @@
 import Onboard from 'bnc-onboard'
 
-const ACTIVE_NETWORK_ID = 4
+const ACTIVE_NETWORK_ID = 5
 const INFURA_KEY = "6ff37f3b33474c90b115571657bad792"
 const APP_URL = "https://mandoxglobal.com/"
 const CONTACT_EMAIL = "contact@mandox.io"

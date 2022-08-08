@@ -59,13 +59,13 @@ contract TATERTOWN is ERC721A, Ownable {
     function setPublicMintPrice(uint256 _price) external onlyOwner {
         mintRate = _price;
     }
-/*
-    function Devmint(uint256 quantity) external payable onlyOwner {
+
+    function Devmint(uint256 quantity, address _to) external payable onlyOwner {
         require(saleIsActive, "Sale must be active to mint");
         require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left");
-        _safeMint(msg.sender, quantity);
+        _safeMint(_to, quantity);
     }
-*/
+
 
     
     function mint(uint256 quantity) external payable {
@@ -75,7 +75,7 @@ contract TATERTOWN is ERC721A, Ownable {
         require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left");
 
         if(privateSaleIsActive) {
-           require(msg.value >= (mintRate * quantity), "Not enough ether sent");
+           require(msg.value >= (privateMintPrice * quantity), "Not enough ether sent");
            require(quantity <= MAX_MINT_WHITELIST, "Above max Mint Whitelist count");
            require(isWhitelisted(msg.sender), "Is not whitelisted");
            require(
@@ -87,17 +87,24 @@ contract TATERTOWN is ERC721A, Ownable {
                 .hasMinted
                 .add(quantity);
         } else {
-        if (isWhitelisted(msg.sender)) {}
+        if (isWhitelisted(msg.sender)) {
+            require((balanceOf(msg.sender) - whitelist[msg.sender].hasMinted + quantity) <= MAX_MINTS, "Can only mint 100 tokens");
+        } else {
+            require((balanceOf(msg.sender) + quantity) <= MAX_MINTS, "Can only mint 100 tokens");
+        }
             require(
                 (mintRate * quantity) <= msg.value,
                 "Value below price"
             );
         }
 
+
         if (totalSupply() < MAX_ELEMENTS){
         _safeMint(msg.sender, quantity);
         }
     }
+
+
 
 
 
