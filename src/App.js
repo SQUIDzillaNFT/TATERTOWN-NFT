@@ -163,6 +163,8 @@ function MainComponent() {
         if (err.constructor !== Object) {
           if (String(err).includes('"code":-32000')) {
             toast.error('Error: not enough ETH for Mint + Gas fee');
+          } else if (String(err).includes('"code":-32603')) {
+            toast.error('Exceeded Max Allowable Mint or Not Whitelisted');
           } else {
 
             let startingIndex = String(err).indexOf('"message"');
@@ -175,7 +177,7 @@ function MainComponent() {
           }
         } else if (err.code === 4001) {
           toast.error('User Cancelled transaction');
-        }
+        } 
       }
     }
   };
