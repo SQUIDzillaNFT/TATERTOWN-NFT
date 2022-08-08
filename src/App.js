@@ -141,7 +141,7 @@ function MainComponent() {
       const privateSale = await contract.privateSaleIsActive();
       let mintPrice = 0;
       if (privateSale) {
-        setMaxMintCount(10);
+        setMaxMintCount(20);
         mintPrice = await contract.privateMintPrice();
       } else {
         mintPrice = await contract.mintRate();
