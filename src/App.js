@@ -1,7 +1,7 @@
 ﻿import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
-import logo from './images/tatelogo.png';
-import kid from "./images/flower.png";
+import logo from './images/sunflower.png';
+import coaster from "./images/coaster.png";
 import connectWalletImg from "./images/Connect Wallet.png"
 import disconnectWalletImg from "./images/Disconnect.png"
 import mintImg from "./images/Mint.png"
@@ -190,7 +190,7 @@ function MainComponent() {
       <img className="logo-img" src={logo} />
       </div>
       <div className="kid">
-        <img className="kid-img" src={kid} />
+        <img className="kid-img" src={coaster} />
       </div>
       <div className={`main-section ` + (walletConnected ? "connected" : " ")}>
         {
