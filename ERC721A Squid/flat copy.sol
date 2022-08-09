@@ -1590,7 +1590,7 @@ contract TATERTOWN is ERC721A, Ownable {
     address[] whitelistAddr;
 
 
-    string public baseURI = "ipfs://QmUxabT7q1DDp6JtokS6cybo7KVFREB9AFTFSv4nwdR5gu/";
+    string public baseURI = "ipfs://QmctVWhKnYK5FDkQAVZf9My2FAhNHmJV6tH6zyB1eGKYHy/";
 
     constructor() ERC721A("Taters", "TATER") {}
 
