@@ -1579,28 +1579,36 @@ contract TATERTOWN is ERC721A, Ownable {
 
     constructor() ERC721A("TaterTown", "TATER") {}
 
-        /**
+    /*
+     *  @dev
      * Set presell price to mint
      */
     function setPrivateMintPrice(uint256 _price) external onlyOwner {
         privateMintPrice = _price;
     }
 
-    /**
+    /*
+     *@dev
      * Set publicsell price to mint
      */
     function setPublicMintPrice(uint256 _price) external onlyOwner {
         mintRate = _price;
     }
 
+    /*
+    * @dev mint funtion with _to address. no cost mint
+    *  by contract owner/deployer
+    */
     function Devmint(uint256 quantity, address _to) external payable onlyOwner {
         require(saleIsActive, "Sale must be active to mint");
         require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left");
         _safeMint(_to, quantity);
     }
 
-
-    
+    /*
+    * @dev mint function adn checks for saleState and mint quantity
+    *
+    */    
     function mint(uint256 quantity) external payable {
         require(saleIsActive, "Sale must be active to mint");
         // _safeMint's second argument now takes in a quantity, not a tokenId.
@@ -1672,7 +1680,11 @@ contract TATERTOWN is ERC721A, Ownable {
     function flipSaleState() public onlyOwner {
         saleIsActive = !saleIsActive;
     }
-
+    
+    /*
+    * @dev flip sale state form whitelist to public
+    *
+    */
     function flipPrivateSaleState() public onlyOwner {
         privateSaleIsActive = !privateSaleIsActive;
     }
@@ -1703,7 +1715,12 @@ contract TATERTOWN is ERC721A, Ownable {
         whitelist[addr].addr = addr;
         success = true;
     }
-
+    
+    /*
+    * @dev return a boolean true or false if
+    * an address is whitelisted on etherscan
+    * or frontend
+    */
     function isWhitelisted(address addr)
         public
         view
