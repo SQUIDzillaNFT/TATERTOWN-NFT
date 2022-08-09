@@ -1622,7 +1622,7 @@ contract TATERTOWN is ERC721A, Ownable {
            require(
                 whitelist[msg.sender].hasMinted.add(quantity) <=
                     MAX_MINT_WHITELIST,
-                "Can only mint 20 while whitelisted"
+                "Can only mint 50 while whitelisted"
             );
             whitelist[msg.sender].hasMinted = whitelist[msg.sender]
                 .hasMinted
@@ -1645,9 +1645,13 @@ contract TATERTOWN is ERC721A, Ownable {
         }
     }
 
+    function setMaxMints(uint _max) external onlyOwner {
+        MAX_MINTS = _max;
+    }
 
-
-
+    function setMaxMintsWhiteList(uint _wlMax) external onlyOwner {
+        MAX_MINT_WHITELIST = _wlMax;
+    }
 
     function setBaseURI(string calldata newBaseURI) external onlyOwner {
         baseURI = newBaseURI;
