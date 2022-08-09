@@ -1,4 +1,5 @@
-
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.7;
 // File: SafeMath.sol
 
 /**
@@ -248,7 +249,6 @@ library SafeMath {
 
 // OpenZeppelin Contracts v4.4.1 (utils/Strings.sol)
 
-pragma solidity ^0.8.0;
 
 /**
  * @dev String operations.
@@ -317,7 +317,6 @@ library Strings {
 
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 
-pragma solidity ^0.8.0;
 
 /**
  * @dev Provides information about the current execution context, including the
@@ -343,7 +342,6 @@ abstract contract Context {
 
 // OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)
 
-pragma solidity ^0.8.0;
 
 
 /**
@@ -420,7 +418,6 @@ abstract contract Ownable is Context {
 
 // OpenZeppelin Contracts (last updated v4.5.0) (utils/Address.sol)
 
-pragma solidity ^0.8.1;
 
 /**
  * @dev Collection of functions related to the address type
@@ -644,7 +641,6 @@ library Address {
 
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/IERC721Receiver.sol)
 
-pragma solidity ^0.8.0;
 
 /**
  * @title ERC721 token receiver interface
@@ -673,7 +669,6 @@ interface IERC721Receiver {
 
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)
 
-pragma solidity ^0.8.0;
 
 /**
  * @dev Interface of the ERC165 standard, as defined in the
@@ -700,7 +695,6 @@ interface IERC165 {
 
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/ERC165.sol)
 
-pragma solidity ^0.8.0;
 
 
 /**
@@ -730,7 +724,6 @@ abstract contract ERC165 is IERC165 {
 
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/IERC721.sol)
 
-pragma solidity ^0.8.0;
 
 
 /**
@@ -874,7 +867,6 @@ interface IERC721 is IERC165 {
 
 // OpenZeppelin Contracts (last updated v4.5.0) (token/ERC721/extensions/IERC721Enumerable.sol)
 
-pragma solidity ^0.8.0;
 
 
 /**
@@ -904,7 +896,6 @@ interface IERC721Enumerable is IERC721 {
 
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/extensions/IERC721Metadata.sol)
 
-pragma solidity ^0.8.0;
 
 
 /**
@@ -928,9 +919,6 @@ interface IERC721Metadata is IERC721 {
     function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 // File: ERC721A.sol
-
-
-pragma solidity ^0.8.4;
 
 error ApprovalCallerNotOwnerNorApproved();
 error ApprovalQueryForNonexistentToken();
@@ -1548,16 +1536,13 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable
 }
 // File: Tater.sol
 
-
-// SPDX-License-Identifier: MIT
 /*
-* ERC721A Gas Optimized Minting - Original ERC721A standard by Azuki.
-*  created by https://twitter.com/SQUIDzillaz0e
-*  Feel free to use and Modify to your needs.
+* ERC721A Gas Optimized Minting
+*  https://twitter.com/SQUIDzillaz0e
+*  Feel free to use and Modify.
 *  
 */
 
-pragma solidity ^0.8.4;
 
 
 contract TATERTOWN is ERC721A, Ownable {
@@ -1565,9 +1550,9 @@ contract TATERTOWN is ERC721A, Ownable {
 
     uint256 MAX_MINTS = 100;
     uint256 MAX_ELEMENTS = 5555;
-    uint256 public mintRate = 0.0007 ether;
-    uint256 public privateMintPrice = 0.0005 ether;
-    uint256 public MAX_MINT_WHITELIST = 20;
+    uint256 public mintRate = 0.07 ether;
+    uint256 public privateMintPrice = 0.055 ether;
+    uint256 public MAX_MINT_WHITELIST = 50;
     /*
     * @Dev Booleans for sale states. 
     * salesIsActive must be true in any case to mint
@@ -1592,7 +1577,7 @@ contract TATERTOWN is ERC721A, Ownable {
 
     string public baseURI = "ipfs://QmctVWhKnYK5FDkQAVZf9My2FAhNHmJV6tH6zyB1eGKYHy/";
 
-    constructor() ERC721A("Taters", "TATER") {}
+    constructor() ERC721A("TaterTown", "TATER") {}
 
         /**
      * Set presell price to mint
