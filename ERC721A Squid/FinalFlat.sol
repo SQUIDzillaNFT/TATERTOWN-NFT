@@ -1612,26 +1612,26 @@ contract TATERTOWN is ERC721A, Ownable {
     function mint(uint256 quantity) external payable {
         require(saleIsActive, "Sale must be active to mint");
         // _safeMint's second argument now takes in a quantity, not a tokenId.
-        require(quantity + _numberMinted(msg.sender) <= MAX_MINTS, "Exceeded the limit");
-        require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left");
+        require(quantity + _numberMinted(msg.sender) <= MAX_MINTS, "Exceeds Max Allowed Mint Count");
+        require(totalSupply() + quantity <= MAX_ELEMENTS, "Not enough tokens left to Mint");
 
         if(privateSaleIsActive) {
-           require(msg.value >= (privateMintPrice * quantity), "Not enough ether sent");
+           require(msg.value >= (privateMintPrice * quantity), "Not enough ETH sent");
            require(quantity <= MAX_MINT_WHITELIST, "Above max Mint Whitelist count");
            require(isWhitelisted(msg.sender), "Is not whitelisted");
            require(
                 whitelist[msg.sender].hasMinted.add(quantity) <=
                     MAX_MINT_WHITELIST,
-                "Can only mint 50 while whitelisted"
+                "Exceeds Max Mint During Whitelist Period"
             );
             whitelist[msg.sender].hasMinted = whitelist[msg.sender]
                 .hasMinted
                 .add(quantity);
         } else {
         if (isWhitelisted(msg.sender)) {
-            require((balanceOf(msg.sender) - whitelist[msg.sender].hasMinted + quantity) <= MAX_MINTS, "Can only mint 100 tokens");
+            require((balanceOf(msg.sender) - whitelist[msg.sender].hasMinted + quantity) <= MAX_MINTS, "Cant Mint any More Tokens");
         } else {
-            require((balanceOf(msg.sender) + quantity) <= MAX_MINTS, "Can only mint 100 tokens");
+            require((balanceOf(msg.sender) + quantity) <= MAX_MINTS, "Cant Mint any More Tokens");
         }
             require(
                 (mintRate * quantity) <= msg.value,
