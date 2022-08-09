@@ -1645,11 +1645,11 @@ contract TATERTOWN is ERC721A, Ownable {
         }
     }
 
-    function setMaxMints(uint _max) external onlyOwner {
+    function setMaxMints(uint256 _max) external onlyOwner {
         MAX_MINTS = _max;
     }
 
-    function setMaxMintsWhiteList(uint _wlMax) external onlyOwner {
+    function setMaxMintsWhiteList(uint256 _wlMax) external onlyOwner {
         MAX_MINT_WHITELIST = _wlMax;
     }
 
