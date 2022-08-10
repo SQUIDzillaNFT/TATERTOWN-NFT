@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 /*
-* ERC721A Gas Optimized Minting - Original ERC721A standard by Azuki.
+* ERC721A Gas Optimized Minting
 *  created by https://twitter.com/SQUIDzillaz0e
 *  Feel free to use and Modify to your needs.
 *  
