@@ -63,7 +63,7 @@ function MainComponent() {
         console.log('wallet', wallet);
         if (wallet.provider) {
           let ethersProvider = new ethers.providers.Web3Provider(wallet.provider);
-          let _nftContract = new ethers.Contract(ERC721a.networks[5].address, ERC721a.abi, ethersProvider.getUncheckedSigner());
+          let _nftContract = new ethers.Contract(ERC721a.networks[1].address, ERC721a.abi, ethersProvider.getUncheckedSigner());
           setContract(_nftContract);
           let _totalSupply = await _nftContract.totalSupply();
           console.log(totalSupply);
@@ -129,7 +129,7 @@ function MainComponent() {
   }
 
   const [contract, setContract] = useState(null);
-  const [maxTokenNumber, setMaxTokenNumber] = useState(200);
+  const [maxTokenNumber, setMaxTokenNumber] = useState(100);
   const [totalSupply, setTotalSupply] = useState(0);
 
 
@@ -141,7 +141,7 @@ function MainComponent() {
       const privateSale = await contract.privateSaleIsActive();
       let mintPrice = 0;
       if (privateSale) {
-        setMaxMintCount(20);
+        setMaxMintCount(50);
         mintPrice = await contract.privateMintPrice();
       } else {
         mintPrice = await contract.mintRate();

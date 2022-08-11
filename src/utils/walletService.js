@@ -1,11 +1,11 @@
 import Onboard from 'bnc-onboard'
 
-const ACTIVE_NETWORK_ID = 5
+const ACTIVE_NETWORK_ID = 1
 const INFURA_KEY = "6ff37f3b33474c90b115571657bad792"
-const APP_URL = "https://mandoxglobal.com/"
+const APP_URL = "https://tatertownNFT.com/"
 const CONTACT_EMAIL = "contact@mandox.io"
 const RPC_URL = "https://mainnet.infura.io/v3/6ff37f3b33474c90b115571657bad792"
-const APP_NAME = "ERC721A"
+const APP_NAME = "Tater Town Mint"
 
 const wallets = [
   { walletName: "metamask" },

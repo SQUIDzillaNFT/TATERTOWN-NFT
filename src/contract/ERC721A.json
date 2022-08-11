@@ -1,5 +1,5 @@
 {
-   "contractName": "TheLostKids",
+   "contractName": "TATERTOWN",
    "abi": [
       {
          "inputs": [],
@@ -181,6 +181,24 @@
          "type": "event"
       },
       {
+         "inputs": [
+            {
+               "internalType": "uint256",
+               "name": "quantity",
+               "type": "uint256"
+            },
+            {
+               "internalType": "address",
+               "name": "_to",
+               "type": "address"
+            }
+         ],
+         "name": "Devmint",
+         "outputs": [],
+         "stateMutability": "payable",
+         "type": "function"
+      },
+      {
          "inputs": [],
          "name": "MAX_MINT_WHITELIST",
          "outputs": [
@@ -209,6 +227,24 @@
                "type": "bool"
             }
          ],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "uint256",
+               "name": "_amount",
+               "type": "uint256"
+            },
+            {
+               "internalType": "address payable",
+               "name": "_to",
+               "type": "address"
+            }
+         ],
+         "name": "altWithdraw",
+         "outputs": [],
          "stateMutability": "nonpayable",
          "type": "function"
       },
@@ -340,6 +376,19 @@
       },
       {
          "inputs": [],
+         "name": "maxAllowedMints",
+         "outputs": [
+            {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+            }
+         ],
+         "stateMutability": "view",
+         "type": "function"
+      },
+      {
+         "inputs": [],
          "name": "maxSupply",
          "outputs": [
             {
@@ -420,24 +469,6 @@
             }
          ],
          "stateMutability": "view",
-         "type": "function"
-      },
-      {
-         "inputs": [
-            {
-               "internalType": "uint256",
-               "name": "_amount",
-               "type": "uint256"
-            },
-            {
-               "internalType": "address payable",
-               "name": "_to",
-               "type": "address"
-            }
-         ],
-         "name": "partialWithdraw",
-         "outputs": [],
-         "stateMutability": "nonpayable",
          "type": "function"
       },
       {
@@ -577,6 +608,32 @@
             }
          ],
          "name": "setBaseURI",
+         "outputs": [],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "uint256",
+               "name": "_max",
+               "type": "uint256"
+            }
+         ],
+         "name": "setMaxMints",
+         "outputs": [],
+         "stateMutability": "nonpayable",
+         "type": "function"
+      },
+      {
+         "inputs": [
+            {
+               "internalType": "uint256",
+               "name": "_wlMax",
+               "type": "uint256"
+            }
+         ],
+         "name": "setMaxMintsWhiteList",
          "outputs": [],
          "stateMutability": "nonpayable",
          "type": "function"
@@ -814,11 +871,11 @@
       }
    ],
    "networks": {
-      "5": {
+      "1": {
          "events": {},
          "links": {},
-         "address": "0x7358e528780Abfc3B0e090DC496D06DEee129895",
-         "transactionHash": "0xbc83f66bb259ea5e668e1ee8f4ca217e300213576a91eb9de7486318ba329bae"
+         "address": "0x159eb74da692a82a14dc030de91127e70a2c45cb",
+         "transactionHash": "0xb8aa834e7c8722331c8188668d1f12f3f947b76d25505b6bdacd4f01a112ff99"
       }
    }
 }
