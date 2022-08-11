@@ -1664,11 +1664,7 @@ contract TATERTOWN is ERC721A, Ownable {
         return MAX_MINTS;
     }
 
-    function publicmintPrice() external view returns (uint256) {
-    return mintRate;
-    }
-
-    function withdraw() external payable onlyOwner {
+    function withdraw() external onlyOwner {
         payable(owner()).transfer(address(this).balance);
     }
 
