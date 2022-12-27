@@ -1,6 +1,7 @@
 ﻿import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
 import logo from './images/sunflower.png';
+import sold from './images/sold.png';
 import coaster from "./images/coaster.png";
 import connectWalletImg from "./images/Connect Wallet.png"
 import disconnectWalletImg from "./images/Disconnect.png"
@@ -192,44 +193,13 @@ function MainComponent() {
       <div className="kid">
         <img className="kid-img" src={coaster} />
       </div>
-      <div className={`main-section ` + (walletConnected ? "connected" : " ")}>
-        {
-          !isStarted && (
-            <div className="count-down"> 
-              <Countdown className="mt-5" date={new Date("2022-08-12T15:00:00+0000")} renderer={renderer} />
-              
-            </div>
-          )
-        }
-        {
-          isStarted && !walletConnected && (
-            <>
-                <a className="btn btn-connect" onClick={() => connectWallet()}><img src={connectWalletImg} /></a>
-            </>
-          )
-        }
-        {
-          isStarted && walletConnected && (
-            <>
-              <div>
-                <div className="totalMint">Total Minted</div>
-             <div className="totalNumber"> {totalSupply} / 5555 </div>
-                <div className="qty">
-                  
-                  <span className="minus bg-dark" onClick={(e) => setMintCount(mintCount > 1 ? mintCount - 1 : 1)}>-</span>
-                  <input type="number" className="count" name="qty" value={mintCount} disabled />
-                  <span className="plus bg-dark" onClick={(e) => setMintCount(mintCount < maxMintCount ? mintCount + 1 : maxMintCount)}>+</span>
-                </div>
-              </div>
-              <div className="mt-3">
-                <a className="btn btn-connect" onClick={() => mint(mintCount)} disabled={mintFlag}>{mintFlag ? <i className="fa fa-spinner fa-spin"></i> : <img style={{ width: 120 }} src={mintImg} />}</a>
-              </div>
-              <a className="btn btn-connect btn-disconnect" onClick={() => disconnectWallet()} ><img src={disconnectWalletImg} /></a>
-            </>
-          )
-        }
+      <div>
+      <img className='sold' src={sold} />
+      <div className='buy'>Buy on </div>
+      <li>
+        
+      <a className='linkz' href="https://opensea.io/collection/tatertownnft">OPENSEA</a></li>
       </div>
-
       <div className="content">
         <img src={footer} />
       </div>

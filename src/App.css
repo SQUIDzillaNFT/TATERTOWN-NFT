@@ -524,3 +524,34 @@ input:disabled{
   font-family: 'Chewy', cursive;
   color: #ef386c;
 }
+
+.sold {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.linkz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #6d05ff;
+  font-size: xx-large;
+
+}
+
+.linkz:hover {
+  color: #ff9204;
+  transform: scale(2);
+}
+
+.buy {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-size: xx-large;
+}
